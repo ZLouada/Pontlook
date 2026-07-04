@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export function FindTrainingTeaser() {
   return (
-    <section className="py-24 bg-slate-900 relative overflow-hidden">
+    <section className="py-24 bg-slate-900 dark:bg-[var(--bg-subtle)] relative overflow-hidden">
       <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl" />
       

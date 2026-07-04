@@ -1,34 +1,94 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-500: #2451BF;
-  --color-primary-400: #3D7BFF;
+  --color-primary-50: #EEF2FF;
+  --color-primary-100: #D8E2FF;
+  --color-primary-200: #B5C8FF;
   --color-primary-300: #7FB8FF;
-  
-  --color-background: #ffffff;
-  --color-foreground: #475569;
-  
-  --color-heading: #0F172A;
+  --color-primary-400: #3D7BFF;
+  --color-primary-500: #2451BF;
+  --color-primary-600: #1B3D99;
+  --color-primary-700: #132E73;
+  --color-primary-800: #0D1F4D;
+  --color-primary-900: #091433;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* ──────────── Light Mode Tokens ──────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #475569;
+  --bg-base: #ffffff;
+  --bg-subtle: #f8fafc;
+  --bg-muted: #f1f5f9;
+  --bg-elevated: #ffffff;
+
+  --fg-default: #334155;
+  --fg-muted: #64748b;
+  --fg-faint: #94a3b8;
+  --fg-heading: #0f172a;
+  --fg-on-primary: #ffffff;
+
+  --border-default: #e2e8f0;
+  --border-subtle: #f1f5f9;
+
+  --surface-card: #ffffff;
+  --surface-overlay: rgba(255, 255, 255, 0.8);
 }
 
+/* ──────────── Dark Mode Tokens ──────────── */
+.dark {
+  --bg-base: #0c111b;
+  --bg-subtle: #111827;
+  --bg-muted: #1a2236;
+  --bg-elevated: #151d2e;
+
+  --fg-default: #c8d1df;
+  --fg-muted: #8896ab;
+  --fg-faint: #5b6b82;
+  --fg-heading: #eef2f7;
+  --fg-on-primary: #ffffff;
+
+  --border-default: #1e293b;
+  --border-subtle: #1a2236;
+
+  --surface-card: #151d2e;
+  --surface-overlay: rgba(12, 17, 27, 0.85);
+}
+
+/* ──────────── Base Styles ──────────── */
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--bg-base);
+  color: var(--fg-default);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-heading);
+  color: var(--fg-heading);
   font-family: var(--font-heading);
   font-weight: 600;
+}
+
+/* ──────────── Scrollbar polish (dark) ──────────── */
+.dark ::-webkit-scrollbar { width: 8px; }
+.dark ::-webkit-scrollbar-track { background: var(--bg-subtle); }
+.dark ::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: 4px; }
+
+/* ──────────── Form input dark mode ──────────── */
+.dark input, .dark select, .dark textarea {
+  background-color: var(--bg-muted);
+  border-color: var(--border-default);
+  color: var(--fg-default);
+}
+.dark input::placeholder, .dark select::placeholder, .dark textarea::placeholder {
+  color: var(--fg-faint);
+}
+.dark input:focus, .dark select:focus, .dark textarea:focus {
+  border-color: var(--color-primary-500);
+}
+.dark option {
+  background-color: var(--bg-elevated);
+  color: var(--fg-default);
 }

@@ -9,7 +9,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Check, ChevronRight, ChevronLeft } from "lucide-react";
 
-// Schemas for each step
+
 const step1Schema = z.object({
   companyName: z.string().min(2, "Company name is required"),
   industry: z.string().min(2, "Industry is required"),
@@ -48,7 +48,7 @@ const step7Schema = z.object({
   }),
 });
 
-// Combined schema for final validation
+
 const formSchema = z.object({}).merge(step1Schema).merge(step2Schema).merge(step3Schema)
   .merge(step4Schema).merge(step5Schema).merge(step6Schema).merge(step7Schema);
 
@@ -77,7 +77,7 @@ export default function FindTrainingWizard() {
     }
   });
 
-  // Load from localStorage
+  
   useEffect(() => {
     const savedData = localStorage.getItem("pontlook_training_form");
     if (savedData) {
@@ -97,7 +97,7 @@ export default function FindTrainingWizard() {
     setIsLoaded(true);
   }, [setValue]);
 
-  // Save to localStorage on change
+  
   const formValues = watch();
   useEffect(() => {
     if (isLoaded && !isSubmitted) {
@@ -110,7 +110,7 @@ export default function FindTrainingWizard() {
     const stepDef = STEPS.find(s => s.id === currentStep);
     if (!stepDef) return;
 
-    // Trigger validation for current step fields
+    
     const isStepValid = await trigger(stepDef.fields as any);
     
     if (isStepValid) {
@@ -149,7 +149,7 @@ export default function FindTrainingWizard() {
     }
   };
 
-  // Helper for step 3 challenges
+  
   const challenges = watch("challenges") || [];
   const toggleChallenge = (val: string) => {
     if (challenges.includes(val)) {
@@ -159,17 +159,17 @@ export default function FindTrainingWizard() {
     }
   };
 
-  if (!isLoaded) return null; // Prevent hydration mismatch
+  if (!isLoaded) return null; 
 
   if (isSubmitted) {
     return (
-      <div className="flex-1 bg-slate-50 flex items-center justify-center py-24 px-4">
-        <FadeIn className="bg-white p-10 rounded-2xl shadow-xl shadow-primary-500/10 max-w-lg w-full text-center border border-slate-200">
-          <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Check className="w-10 h-10 text-primary-600" />
+      <div className="flex-1 bg-slate-50 dark:bg-[var(--bg-subtle)] flex items-center justify-center py-24 px-4">
+        <FadeIn className="bg-white dark:bg-[var(--surface-card)] p-10 rounded-2xl shadow-xl shadow-primary-500/10 dark:shadow-black/30 max-w-lg w-full text-center border border-slate-200 dark:border-[var(--border-default)]">
+          <div className="w-20 h-20 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Check className="w-10 h-10 text-primary-600 dark:text-primary-400" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Request Received</h2>
-          <p className="text-slate-600 mb-8 text-lg">
+          <h2 className="text-3xl font-bold text-[var(--fg-heading)] mb-4">Request Received</h2>
+          <p className="text-[var(--fg-default)] mb-8 text-lg">
             We're verifying your request and matching you with up to 3 specialized providers in your industry. You'll hear from us within 48 hours.
           </p>
           <Button asChild className="w-full h-12 text-base">
@@ -181,11 +181,11 @@ export default function FindTrainingWizard() {
   }
 
   return (
-    <div className="flex-1 bg-slate-50">
-      {/* Landing Page Content - Only show when on Step 1 to keep focus during form filling */}
+    <div className="flex-1 bg-slate-50 dark:bg-[var(--bg-subtle)]">
+      
       {currentStep === 1 && (
         <>
-          <section className="bg-slate-900 py-20 px-4 relative overflow-hidden">
+          <section className="bg-slate-900 dark:bg-[var(--bg-muted)] py-20 px-4 relative overflow-hidden">
             <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
             <div className="container mx-auto max-w-4xl text-center relative z-10">
               <FadeIn>
@@ -202,43 +202,43 @@ export default function FindTrainingWizard() {
             </div>
           </section>
 
-          <section className="py-20 px-4 bg-white border-b border-slate-200/60">
+          <section className="py-20 px-4 bg-white dark:bg-[var(--bg-base)] border-b border-slate-200 dark:border-[var(--border-default)]">
             <div className="container mx-auto max-w-5xl">
               <div className="grid md:grid-cols-2 gap-16 items-center">
                 <FadeIn>
-                  <h2 className="text-3xl font-bold text-slate-900 mb-6">How the Assessment Works</h2>
+                  <h2 className="text-3xl font-bold text-[var(--fg-heading)] mb-6">How the Assessment Works</h2>
                   <div className="space-y-6">
                     <div className="flex gap-4">
-                      <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold shrink-0">1</div>
+                      <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 flex items-center justify-center font-bold shrink-0">1</div>
                       <div>
-                        <h4 className="font-semibold text-slate-900">Share Your Challenges</h4>
-                        <p className="text-slate-600 text-sm mt-1">Select your specific pain points (e.g., low conversion rates, high turnover).</p>
+                        <h4 className="font-semibold text-[var(--fg-heading)]">Share Your Challenges</h4>
+                        <p className="text-[var(--fg-default)] text-sm mt-1">Select your specific pain points (e.g., low conversion rates, high turnover).</p>
                       </div>
                     </div>
                     <div className="flex gap-4">
-                      <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold shrink-0">2</div>
+                      <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 flex items-center justify-center font-bold shrink-0">2</div>
                       <div>
-                        <h4 className="font-semibold text-slate-900">Define Scope & Budget</h4>
-                        <p className="text-slate-600 text-sm mt-1">Tell us your timeline, expected outcomes, and approved budget range.</p>
+                        <h4 className="font-semibold text-[var(--fg-heading)]">Define Scope & Budget</h4>
+                        <p className="text-[var(--fg-default)] text-sm mt-1">Tell us your timeline, expected outcomes, and approved budget range.</p>
                       </div>
                     </div>
                     <div className="flex gap-4">
-                      <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold shrink-0">3</div>
+                      <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 flex items-center justify-center font-bold shrink-0">3</div>
                       <div>
-                        <h4 className="font-semibold text-slate-900">Get Matched</h4>
-                        <p className="text-slate-600 text-sm mt-1">Within 48 hours, we connect you with up to 3 specialized providers with a 90%+ match score.</p>
+                        <h4 className="font-semibold text-[var(--fg-heading)]">Get Matched</h4>
+                        <p className="text-[var(--fg-default)] text-sm mt-1">Within 48 hours, we connect you with up to 3 specialized providers with a 90%+ match score.</p>
                       </div>
                     </div>
                   </div>
                 </FadeIn>
                 <FadeIn delay={0.2}>
-                  <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                  <div className="bg-slate-50 dark:bg-[var(--bg-muted)] p-8 rounded-2xl border border-slate-200 dark:border-[var(--border-default)]">
                     <div className="inline-flex items-center gap-2 mb-4">
-                      <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">Verified Outcome</span>
+                      <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full border border-emerald-100 dark:border-emerald-800/50">Verified Outcome</span>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">"We found a specialized leadership coach in 2 days."</h3>
-                    <p className="text-slate-600 italic mb-6">"Instead of interviewing 10 generic agencies, Pontlook introduced us to a provider who had specifically trained engineering managers in the Middle East."</p>
-                    <p className="text-sm font-medium text-slate-900">— HR Director, Series C Startup</p>
+                    <h3 className="text-xl font-bold text-[var(--fg-heading)] mb-4">"We found a specialized leadership coach in 2 days."</h3>
+                    <p className="text-[var(--fg-default)] italic mb-6">"Instead of interviewing 10 generic agencies, Pontlook introduced us to a provider who had specifically trained engineering managers in the Middle East."</p>
+                    <p className="text-sm font-medium text-[var(--fg-heading)]">— HR Director, Series C Startup</p>
                   </div>
                 </FadeIn>
               </div>
@@ -247,11 +247,11 @@ export default function FindTrainingWizard() {
         </>
       )}
 
-      {/* The Wizard Form */}
+      
       <div className="py-12 md:py-24" id="assessment">
         <div className="container mx-auto max-w-3xl px-4 sm:px-6">
         
-        {/* Progress Indicator */}
+        
         <div className="mb-12">
           <div className="flex justify-between items-center mb-4">
             {STEPS.map((step) => (
@@ -261,21 +261,21 @@ export default function FindTrainingWizard() {
                     currentStep === step.id 
                       ? "bg-primary-500 text-white shadow-md shadow-primary-500/30" 
                       : currentStep > step.id 
-                        ? "bg-primary-100 text-primary-700"
-                        : "bg-white text-slate-400 border border-slate-200"
+                        ? "bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400"
+                        : "bg-[var(--surface-card)] text-[var(--fg-faint)] border border-[var(--border-default)]"
                   }`}
                 >
                   {currentStep > step.id ? <Check className="w-4 h-4" /> : step.id}
                 </div>
                 <span className={`text-xs mt-2 font-medium hidden sm:block ${
-                  currentStep >= step.id ? "text-primary-700" : "text-slate-400"
+                  currentStep >= step.id ? "text-primary-700 dark:text-primary-400" : "text-[var(--fg-faint)]"
                 }`}>
                   {step.title}
                 </span>
               </div>
             ))}
-            {/* Connecting line */}
-            <div className="absolute left-[10%] right-[10%] h-0.5 bg-slate-200 top-4 -z-0 hidden sm:block">
+            
+            <div className="absolute left-[10%] right-[10%] h-0.5 bg-slate-200 dark:bg-[var(--border-default)] top-4 -z-0 hidden sm:block">
               <div 
                 className="h-full bg-primary-500 transition-all duration-300" 
                 style={{ width: `${((currentStep - 1) / (STEPS.length - 1)) * 100}%` }}
@@ -284,23 +284,23 @@ export default function FindTrainingWizard() {
           </div>
         </div>
 
-        {/* Form Container */}
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200/60 p-6 sm:p-10">
+        
+        <div className="bg-white dark:bg-[var(--surface-card)] rounded-2xl shadow-sm dark:shadow-black/20 border border-slate-200 dark:border-[var(--border-default)] p-6 sm:p-10">
           <form onSubmit={handleSubmit(onSubmit)}>
             
-            {/* STEP 1: Company Info */}
+            
             {currentStep === 1 && (
               <FadeIn direction="none">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Tell us about your company</h3>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Tell us about your company</h3>
                 <div className="space-y-5">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">Company Name</label>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Company Name</label>
                     <input {...register("companyName")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none" placeholder="Acme Corp" />
                     {errors.companyName && <p className="text-red-500 text-xs mt-1">{errors.companyName.message}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">Industry</label>
-                    <select {...register("industry")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none bg-white">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Industry</label>
+                    <select {...register("industry")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none bg-white dark:bg-slate-950">
                       <option value="">Select industry...</option>
                       <option value="Government">Government & Public Sector</option>
                       <option value="Finance">Banking & Finance</option>
@@ -311,8 +311,8 @@ export default function FindTrainingWizard() {
                     {errors.industry && <p className="text-red-500 text-xs mt-1">{errors.industry.message}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">Company Size</label>
-                    <select {...register("employeeCount")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none bg-white">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Company Size</label>
+                    <select {...register("employeeCount")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none bg-white dark:bg-slate-950">
                       <option value="">Select size...</option>
                       <option value="1-50">1-50 employees</option>
                       <option value="51-200">51-200 employees</option>
@@ -325,30 +325,30 @@ export default function FindTrainingWizard() {
               </FadeIn>
             )}
 
-            {/* STEP 2: Contact */}
+            
             {currentStep === 2 && (
               <FadeIn direction="none">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Who should providers contact?</h3>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Who should providers contact?</h3>
                 <div className="space-y-5">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                      <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">First Name</label>
                       <input {...register("firstName")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none" />
                       {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName.message}</p>}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                      <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Last Name</label>
                       <input {...register("lastName")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none" />
                       {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName.message}</p>}
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">Job Title</label>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Job Title</label>
                     <input {...register("jobTitle")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none" placeholder="e.g. HR Director, VP of Sales" />
                     {errors.jobTitle && <p className="text-red-500 text-xs mt-1">{errors.jobTitle.message}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">Work Email</label>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Work Email</label>
                     <input type="email" {...register("email")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none" />
                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                   </div>
@@ -356,11 +356,11 @@ export default function FindTrainingWizard() {
               </FadeIn>
             )}
 
-            {/* STEP 3: Challenges */}
+            
             {currentStep === 3 && (
               <FadeIn direction="none">
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">What challenges are you facing?</h3>
-                <p className="text-slate-500 mb-6 text-sm">Select all that apply to help us match you correctly.</p>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">What challenges are you facing?</h3>
+                <p className="text-slate-500 dark:text-slate-400 dark:text-slate-500 mb-6 text-sm">Select all that apply to help us match you correctly.</p>
                 
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
@@ -378,7 +378,7 @@ export default function FindTrainingWizard() {
                       className={`flex items-start gap-3 p-4 rounded-xl border-2 cursor-pointer transition-colors ${
                         challenges.includes(challenge) 
                           ? "border-primary-500 bg-primary-50/30" 
-                          : "border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+                          : "border-slate-200 dark:border-slate-700 hover:border-slate-300 hover:bg-slate-50 dark:bg-slate-900/50"
                       }`}
                     >
                       <input 
@@ -387,7 +387,7 @@ export default function FindTrainingWizard() {
                         checked={challenges.includes(challenge)}
                         onChange={() => toggleChallenge(challenge)}
                       />
-                      <span className="text-sm font-medium text-slate-700 leading-tight">{challenge}</span>
+                      <span className="text-sm font-medium text-slate-700 dark:text-slate-200 leading-tight">{challenge}</span>
                     </label>
                   ))}
                 </div>
@@ -395,16 +395,16 @@ export default function FindTrainingWizard() {
               </FadeIn>
             )}
 
-            {/* STEP 4: Requirements */}
+            
             {currentStep === 4 && (
               <FadeIn direction="none">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Training Requirements</h3>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Training Requirements</h3>
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-3">Primary Training Type</label>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-3">Primary Training Type</label>
                     <div className="grid grid-cols-2 gap-3">
                       {["Leadership", "Sales", "Technical", "Soft Skills"].map(type => (
-                        <label key={type} className={`border rounded-lg p-3 text-center cursor-pointer ${watch("trainingType") === type ? "border-primary-500 bg-primary-50 text-primary-700 font-medium" : "border-slate-200 hover:bg-slate-50"}`}>
+                        <label key={type} className={`border rounded-lg p-3 text-center cursor-pointer ${watch("trainingType") === type ? "border-primary-500 bg-primary-50 text-primary-700 font-medium" : "border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:bg-slate-900/50"}`}>
                           <input type="radio" value={type} {...register("trainingType")} className="hidden" />
                           {type}
                         </label>
@@ -414,10 +414,10 @@ export default function FindTrainingWizard() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-3">Preferred Delivery Method</label>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-3">Preferred Delivery Method</label>
                     <div className="grid grid-cols-2 gap-3">
                       {["In-person", "Virtual Live", "Hybrid", "E-learning"].map(method => (
-                        <label key={method} className={`border rounded-lg p-3 text-center cursor-pointer ${watch("deliveryMethod") === method ? "border-primary-500 bg-primary-50 text-primary-700 font-medium" : "border-slate-200 hover:bg-slate-50"}`}>
+                        <label key={method} className={`border rounded-lg p-3 text-center cursor-pointer ${watch("deliveryMethod") === method ? "border-primary-500 bg-primary-50 text-primary-700 font-medium" : "border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:bg-slate-900/50"}`}>
                           <input type="radio" value={method} {...register("deliveryMethod")} className="hidden" />
                           {method}
                         </label>
@@ -429,14 +429,14 @@ export default function FindTrainingWizard() {
               </FadeIn>
             )}
 
-            {/* STEP 5: Scope */}
+            
             {currentStep === 5 && (
               <FadeIn direction="none">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Scope & Budget</h3>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Scope & Budget</h3>
                 <div className="space-y-5">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">Approved Budget Range</label>
-                    <select {...register("budgetRange")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none bg-white">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Approved Budget Range</label>
+                    <select {...register("budgetRange")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none bg-white dark:bg-slate-950">
                       <option value="">Select budget range...</option>
                       <option value="Under $5,000">Under $5,000</option>
                       <option value="$5,000 - $15,000">$5,000 - $15,000</option>
@@ -447,8 +447,8 @@ export default function FindTrainingWizard() {
                     {errors.budgetRange && <p className="text-red-500 text-xs mt-1">{errors.budgetRange.message}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">Expected Implementation Timeline</label>
-                    <select {...register("timeline")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none bg-white">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">Expected Implementation Timeline</label>
+                    <select {...register("timeline")} className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none bg-white dark:bg-slate-950">
                       <option value="">Select timeline...</option>
                       <option value="ASAP">ASAP (Within 30 days)</option>
                       <option value="1-3 months">1-3 months</option>
@@ -461,13 +461,13 @@ export default function FindTrainingWizard() {
               </FadeIn>
             )}
 
-            {/* STEP 6: Outcomes */}
+            
             {currentStep === 6 && (
               <FadeIn direction="none">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Expected Outcomes</h3>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Expected Outcomes</h3>
                 <div className="space-y-5">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">What does success look like for this training?</label>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">What does success look like for this training?</label>
                     <textarea 
                       {...register("expectedOutcomes")} 
                       rows={5}
@@ -480,13 +480,13 @@ export default function FindTrainingWizard() {
               </FadeIn>
             )}
 
-            {/* STEP 7: Final */}
+            
             {currentStep === 7 && (
               <FadeIn direction="none">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Final Notes</h3>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Final Notes</h3>
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Anything else we should know? (Optional)</label>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">Anything else we should know? (Optional)</label>
                     <textarea 
                       {...register("additionalNotes")} 
                       rows={4}
@@ -495,14 +495,14 @@ export default function FindTrainingWizard() {
                     />
                   </div>
                   
-                  <div className="pt-4 border-t border-slate-100">
+                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
                     <label className="flex items-start gap-3 cursor-pointer">
                       <input 
                         type="checkbox" 
                         {...register("consent")}
                         className="mt-1 w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
                       />
-                      <span className="text-sm text-slate-600">
+                      <span className="text-sm text-slate-600 dark:text-slate-300">
                         I agree to the <Link href="/privacy" className="text-primary-600 hover:underline">Privacy Policy</Link> and consent to Pontlook processing my personal data to match me with training providers.
                       </span>
                     </label>
@@ -512,8 +512,8 @@ export default function FindTrainingWizard() {
               </FadeIn>
             )}
 
-            {/* Navigation Buttons */}
-            <div className="flex items-center justify-between mt-10 pt-6 border-t border-slate-100">
+            
+            <div className="flex items-center justify-between mt-10 pt-6 border-t border-slate-100 dark:border-slate-800">
               <Button 
                 type="button" 
                 variant="ghost" 

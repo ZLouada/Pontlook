@@ -13,10 +13,10 @@ export function Industries() {
   ];
 
   return (
-    <section className="py-24 bg-white border-b border-slate-100">
+    <section className="py-24 bg-white dark:bg-[var(--bg-base)] border-b border-slate-100 dark:border-[var(--border-default)]">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         <FadeIn>
-          <h2 className="text-2xl font-bold text-slate-900 mb-8">
+          <h2 className="text-2xl font-bold text-[var(--fg-heading)] mb-8">
             Serving High-Growth Middle East Industries
           </h2>
           
@@ -24,7 +24,7 @@ export function Industries() {
             {industries.map((industry, index) => (
               <span 
                 key={index}
-                className="inline-flex items-center rounded-full bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 border border-slate-200 hover:border-primary-300 hover:bg-primary-50 transition-colors cursor-default"
+                className="inline-flex items-center rounded-full bg-slate-50 dark:bg-[var(--bg-muted)] px-4 py-2 text-sm font-medium text-[var(--fg-default)] border border-slate-200 dark:border-[var(--border-default)] hover:border-primary-300 dark:hover:border-primary-700 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors cursor-default"
               >
                 {industry}
               </span>

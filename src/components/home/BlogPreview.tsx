@@ -25,12 +25,12 @@ export function BlogPreview() {
   ];
 
   return (
-    <section className="py-24 bg-slate-50 border-t border-slate-200/60">
+    <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700/60">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">Market Insights</h2>
-            <p className="text-slate-600">Data-backed intelligence for the Pontlook training industry.</p>
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Market Insights</h2>
+            <p className="text-slate-600 dark:text-slate-300">Data-backed intelligence for the Pontlook training industry.</p>
           </FadeIn>
           <FadeIn delay={0.2} direction="none">
             <Link href="/blog" className="inline-flex items-center text-sm font-medium text-primary-600 hover:text-primary-700">
@@ -42,14 +42,14 @@ export function BlogPreview() {
         <div className="grid md:grid-cols-3 gap-8">
           {posts.map((post, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <Link href={post.href} className="group block h-full bg-white rounded-2xl p-6 border border-slate-200/60 hover:shadow-md transition-all">
-                <span className="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full mb-4">
+              <Link href={post.href} className="group block h-full bg-white dark:bg-slate-950 rounded-2xl p-6 border border-slate-200 dark:border-slate-700/60 hover:shadow-md transition-all">
+                <span className="inline-block px-3 py-1 bg-slate-100 dark:bg-slate-800/50 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-full mb-4">
                   {post.category}
                 </span>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-600 transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                   {post.description}
                 </p>
                 <div className="flex items-center text-sm font-medium text-primary-600 mt-auto">

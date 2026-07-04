@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
-// The exact same schema used on the client
+
 const leadSchema = z.object({
   companyName: z.string().min(2).max(100),
   industry: z.string().min(2).max(50),
@@ -20,7 +20,7 @@ const leadSchema = z.object({
   consent: z.boolean().refine(val => val === true),
 });
 
-// Utility to sanitize strings to prevent basic XSS when rendering elsewhere
+
 function sanitize(input: string) {
   return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -29,8 +29,8 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    // 1. Full Server-Side Validation
-    // This protects against bypassing the multi-step UI
+    
+    
     const validatedData = leadSchema.safeParse(body);
 
     if (!validatedData.success) {
@@ -42,23 +42,23 @@ export async function POST(req: NextRequest) {
 
     const data = validatedData.data;
 
-    // 2. Server-side sanitization on free-text fields
+    
     const sanitizedExpectedOutcomes = sanitize(data.expectedOutcomes);
     const sanitizedAdditionalNotes = data.additionalNotes ? sanitize(data.additionalNotes) : "";
 
-    // 3. Database Insertion (Mocked since DB is unknown)
-    // TODO: Insert into Supabase / PostgreSQL / MongoDB
+    
+    
     console.log("Mock DB Insert:", {
       ...data,
       expectedOutcomes: sanitizedExpectedOutcomes,
       additionalNotes: sanitizedAdditionalNotes,
     });
 
-    // 4. Return generic success message (no internal IDs leaked)
+    
     return NextResponse.json({ success: true, message: "Lead captured successfully" }, { status: 201 });
 
   } catch (error) {
-    // 5. Generic Error Handling (No stack traces leaked)
+    
     console.error("Lead submission error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
