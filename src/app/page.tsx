@@ -2,6 +2,7 @@ import { Hero } from "@/components/home/Hero";
 import { TrustBar } from "@/components/home/TrustBar";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { WhyDifferent } from "@/components/home/WhyDifferent";
+import { Testimonials } from "@/components/home/Testimonials";
 import { Industries } from "@/components/home/Industries";
 import { SocialProof } from "@/components/home/SocialProof";
 import { ProvidersTeaser } from "@/components/home/ProvidersTeaser";
@@ -15,6 +16,7 @@ export default function Home() {
       <TrustBar />
       <HowItWorks />
       <WhyDifferent />
+      <Testimonials />
       <Industries />
       <SocialProof />
       <ProvidersTeaser />

@@ -13,15 +13,15 @@ export function FinalCTA() {
             Ready to scale your training business?
           </h2>
           <p className="text-xl text-[var(--fg-default)] mb-10 max-w-2xl mx-auto">
-            Stop chasing. Start closing. Join the Pontlook's premier matchmaking platform for corporate training.
+            Stop chasing. Start closing. Join Pontlook's premier matchmaking platform for corporate training.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" asChild className="h-14 px-8 text-base shadow-xl shadow-primary-500/20">
-              <Link href="/providers">Partner With Us</Link>
+              <Link href="/providers">For Training Providers</Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="h-14 px-8 text-base">
-              <Link href="/find-training">I Need Training</Link>
+              <Link href="/find-training">Find Training</Link>
             </Button>
           </div>
         </FadeIn>

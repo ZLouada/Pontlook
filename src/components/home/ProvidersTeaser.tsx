@@ -74,7 +74,7 @@ export function ProvidersTeaser() {
               
               <FadeInStaggerItem>
                 <p className="text-xl text-[var(--fg-default)] leading-relaxed mb-6">
-                  Stop paying $5,000/mo agency retainers for unqualified leads. With Pontlook, you only pay for highly-qualified opportunities that match your ideal customer profile.
+                  Stop paying thousands per month in agency retainers for unqualified leads. With Pontlook, you only pay for highly-qualified opportunities that match your ideal customer profile.
                 </p>
                 <p className="text-2xl font-bold text-[var(--fg-heading)] mb-10">
                   Starting at $150 per matched lead.
@@ -96,7 +96,7 @@ export function ProvidersTeaser() {
 
               <FadeInStaggerItem>
                 <Button size="lg" asChild className="h-16 px-10 text-lg shadow-xl shadow-primary-500/20 w-full sm:w-auto">
-                  <Link href="/providers">View Partner Requirements</Link>
+                  <Link href="/providers">For Training Providers</Link>
                 </Button>
               </FadeInStaggerItem>
             </FadeIn>

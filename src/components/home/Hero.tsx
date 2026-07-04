@@ -48,7 +48,7 @@ export function Hero() {
                 </Button>
                 <Button size="lg" variant="outline" className="h-14 px-8 text-lg w-full sm:w-auto bg-[var(--surface-card)]" asChild>
                   <Link href="/find-training">
-                    I Need Training
+                    Find Training
                   </Link>
                 </Button>
               </div>

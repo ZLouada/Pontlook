@@ -21,8 +21,6 @@ export function Navbar() {
   const navLinks = [
     { href: "/find-training", label: "Find Training" },
     { href: "/providers", label: "For Providers" },
-    { href: "/about", label: "About Us" },
-    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -100,14 +98,6 @@ export function Navbar() {
                   <p className="mt-4 text-[var(--fg-muted)]">
                     Dubai, United Arab Emirates
                   </p>
-                </div>
-                
-                <div>
-                  <h4 className="text-sm font-semibold tracking-widest uppercase text-[var(--fg-faint)] mb-6">Social</h4>
-                  <div className="flex gap-6">
-                    <a href="#" className="text-[var(--fg-default)] hover:text-primary-500 transition-colors font-medium">LinkedIn</a>
-                    <a href="#" className="text-[var(--fg-default)] hover:text-primary-500 transition-colors font-medium">Twitter</a>
-                  </div>
                 </div>
               </motion.div>
               

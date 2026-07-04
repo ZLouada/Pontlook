@@ -2,10 +2,10 @@ import { FadeIn } from "@/components/animations/FadeIn";
 
 export function SocialProof() {
   const metrics = [
-    { value: "48h", label: "Average Match Time", subLabel: "Based on internal platform data" },
-    { value: "85%", label: "Lead-to-Meeting Rate", subLabel: "Based on internal platform data" },
-    { value: "$2.5M+", label: "Verified Budget Pipeline", subLabel: "Current projected pipeline" },
-    { value: "120+", label: "Active Middle East Companies", subLabel: "Companies onboarded to date" },
+    { value: "48h", label: "To First Match", subLabel: "Based on Pontlook platform data" },
+    { value: "85%", label: "Book a Meeting", subLabel: "Based on Pontlook platform data" },
+    { value: "$2.5M+", label: "Pipeline Generated", subLabel: "Current projected pipeline" },
+    { value: "120+", label: "Active Companies", subLabel: "Companies onboarded to date" },
   ];
 
   return (

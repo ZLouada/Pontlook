@@ -44,7 +44,7 @@ export default function ProvidersPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-[var(--fg-heading)]">The Old Way</h4>
-                      <p className="text-[var(--fg-default)] text-sm mt-1">Paying $5,000/mo to agencies for unverified leads, generic cold outreach that damages your brand, and unpredictable referral cycles.</p>
+                      <p className="text-[var(--fg-default)] text-sm mt-1">Paying thousands per month to agencies for unverified leads, generic cold outreach that damages your brand, and unpredictable referral cycles.</p>
                     </div>
                   </div>
                   <div className="flex gap-4 p-5 rounded-2xl bg-primary-50/50 dark:bg-primary-900/10 border border-primary-100 dark:border-primary-800/40 shadow-sm">
@@ -66,6 +66,7 @@ export default function ProvidersPage() {
                   <TrendingUp className="w-8 h-8 text-primary-500 mb-4" />
                   <h4 className="font-bold text-[var(--fg-heading)] text-3xl mb-1">85%</h4>
                   <p className="text-sm text-[var(--fg-default)]">Lead-to-meeting rate for "Hot" tier opportunities.</p>
+                  <p className="text-xs text-[var(--fg-faint)] mt-1">Based on Pontlook platform data</p>
                 </div>
               </FadeIn>
               <FadeIn delay={0.2}>
