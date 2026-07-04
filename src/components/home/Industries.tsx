@@ -18,8 +18,8 @@ export function Industries() {
   const duplicatedIndustries = [...industries, ...industries, ...industries];
 
   return (
-    <section className="py-24 bg-[var(--bg-subtle)] border-y border-[var(--border-default)] overflow-hidden">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-12">
+    <section className="py-12 md:py-24 bg-[var(--bg-subtle)] border-y border-[var(--border-default)] overflow-hidden">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-8 md:mb-12">
         <h2 className="text-sm font-semibold tracking-widest uppercase text-[var(--fg-faint)]">
           Serving High-Growth Middle East Industries
         </h2>

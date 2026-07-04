@@ -27,17 +27,17 @@ export function WhyDifferent() {
   ];
 
   return (
-    <section className="py-32 bg-[var(--bg-subtle)] relative overflow-hidden border-b border-[var(--border-default)]">
+    <section className="py-16 md:py-32 bg-[var(--bg-subtle)] relative overflow-hidden border-b border-[var(--border-default)]">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
           
           <div className="lg:w-1/3">
             <FadeIn direction="right" delay={0.1}>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-[var(--fg-heading)] leading-[1.1] mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-[var(--fg-heading)] leading-[1.1] mb-6">
                 Why Training Providers Choose Us
               </h2>
-              <p className="text-xl text-[var(--fg-muted)] leading-relaxed mb-10">
+              <p className="text-lg md:text-xl text-[var(--fg-muted)] leading-relaxed mb-10">
                 We replace unpredictable referral dependency with a scalable, guaranteed pipeline of high-intent buyers.
               </p>
               
@@ -59,10 +59,10 @@ export function WhyDifferent() {
                 {differentiators.map((diff, index) => (
                   <FadeInStaggerItem key={index}>
                     <div className="bg-[var(--surface-card)] rounded-2xl p-8 border border-[var(--border-default)] shadow-sm hover:shadow-xl dark:hover:shadow-black/40 transition-all duration-300 group h-full flex flex-col">
-                      <div className="w-12 h-12 rounded-xl bg-[var(--bg-muted)] text-[var(--fg-heading)] flex items-center justify-center mb-8 group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300">
+                      <div className="w-12 h-12 rounded-xl bg-[var(--bg-muted)] text-[var(--fg-heading)] flex items-center justify-center mb-6 md:mb-8 group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300">
                         {diff.icon}
                       </div>
-                      <h3 className="text-2xl font-bold tracking-tight text-[var(--fg-heading)] mb-4">{diff.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-bold tracking-tight text-[var(--fg-heading)] mb-4">{diff.title}</h3>
                       <p className="text-[var(--fg-muted)] leading-relaxed mt-auto">{diff.description}</p>
                     </div>
                   </FadeInStaggerItem>

@@ -4,15 +4,15 @@ import { Button } from "@/components/ui/button";
 
 export function FinalCTA() {
   return (
-    <section className="py-24 bg-white dark:bg-[var(--bg-base)] relative overflow-hidden text-center">
+    <section className="py-16 md:py-24 bg-white dark:bg-[var(--bg-base)] relative overflow-hidden text-center">
       <div className="absolute inset-0 bg-primary-50/30 dark:bg-primary-900/10" />
       
       <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeIn>
-          <h2 className="text-4xl md:text-5xl font-bold text-[var(--fg-heading)] mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-[var(--fg-heading)] mb-4 md:mb-6 tracking-tight">
             Ready to scale your training business?
           </h2>
-          <p className="text-xl text-[var(--fg-default)] mb-10 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-[var(--fg-default)] mb-8 md:mb-10 max-w-2xl mx-auto">
             Stop chasing. Start closing. Join Pontlook's premier matchmaking platform for corporate training.
           </p>
           

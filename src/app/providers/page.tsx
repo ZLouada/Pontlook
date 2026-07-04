@@ -9,7 +9,7 @@ export default function ProvidersPage() {
   return (
     <div className="flex-1 w-full bg-slate-50 dark:bg-[var(--bg-subtle)]">
       
-      <section className="relative overflow-hidden bg-white dark:bg-[var(--bg-base)] pt-24 pb-20 border-b border-slate-200 dark:border-[var(--border-default)]">
+      <section className="relative overflow-hidden bg-white dark:bg-[var(--bg-base)] pt-16 pb-12 md:pt-24 md:pb-20 border-b border-slate-200 dark:border-[var(--border-default)]">
         <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-primary-50 dark:from-primary-900/20 to-transparent"></div>
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <FadeIn>
@@ -17,10 +17,10 @@ export default function ProvidersPage() {
               <span className="flex h-2 w-2 rounded-full bg-emerald-500 mr-2"></span>
               Now accepting applications for Q3 2026
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-[var(--fg-heading)] mb-6 tracking-tight max-w-4xl mx-auto">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[var(--fg-heading)] mb-6 tracking-tight max-w-4xl mx-auto">
               A predictable pipeline of <span className="text-primary-500 dark:text-primary-400">budget-approved</span> training opportunities.
             </h1>
-            <p className="text-xl text-[var(--fg-default)] mb-10 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-[var(--fg-default)] mb-8 md:mb-10 max-w-2xl mx-auto">
               We connect top-tier training providers with Middle East companies actively seeking to solve workforce challenges. Pay only for qualified leads, starting at $150 per opportunity. Zero retainers.
             </p>
             <Button size="lg" className="h-14 px-8 text-lg shadow-xl shadow-primary-500/20" asChild>
@@ -31,12 +31,12 @@ export default function ProvidersPage() {
       </section>
 
       
-      <section className="py-24 bg-white dark:bg-[var(--bg-base)]">
+      <section className="py-16 md:py-24 bg-white dark:bg-[var(--bg-base)]">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
               <FadeIn direction="right">
-                <h2 className="text-3xl font-bold text-[var(--fg-heading)] mb-6">Stop paying for clicks. Start paying for conversations.</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-[var(--fg-heading)] mb-6">Stop paying for clicks. Start paying for conversations.</h2>
                 <div className="space-y-6">
                   <div className="flex gap-4 p-5 rounded-2xl bg-red-50/50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30">
                     <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center shrink-0">
@@ -96,11 +96,11 @@ export default function ProvidersPage() {
       </section>
 
       
-      <section className="py-24 bg-slate-900 dark:bg-[var(--bg-muted)] text-white relative">
+      <section className="py-16 md:py-24 bg-slate-900 dark:bg-[var(--bg-muted)] text-white relative">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Simple, Performance-Based Pricing</h2>
-            <p className="text-lg text-slate-300">No retainers. No subscriptions. You only pay when you accept a verified opportunity.</p>
+          <FadeIn className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Simple, Performance-Based Pricing</h2>
+            <p className="text-base md:text-lg text-slate-300">No retainers. No subscriptions. You only pay when you accept a verified opportunity.</p>
           </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -165,11 +165,11 @@ export default function ProvidersPage() {
       </section>
 
       
-      <section id="apply" className="py-24 bg-white dark:bg-[var(--bg-base)] text-center">
+      <section id="apply" className="py-16 md:py-24 bg-white dark:bg-[var(--bg-base)] text-center">
         <div className="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-[var(--fg-heading)] mb-6">Join the Network</h2>
-            <p className="text-[var(--fg-default)] mb-10 max-w-xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--fg-heading)] mb-4 md:mb-6">Join the Network</h2>
+            <p className="text-sm md:text-base text-[var(--fg-default)] mb-8 md:mb-10 max-w-xl mx-auto">
               We maintain strict quality control. We only accept providers with proven track records, excellent references, and capacity to take on enterprise clients in the Middle East.
             </p>
             <form className="max-w-md mx-auto space-y-4 text-left">

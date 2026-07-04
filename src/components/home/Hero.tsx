@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-[var(--bg-base)] pt-32 pb-24 border-b border-[var(--border-default)]">
+    <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-[var(--bg-base)] pt-24 pb-12 md:pt-32 md:pb-24 border-b border-[var(--border-default)]">
       
       {/* Abstract Background Elements */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -13,7 +13,7 @@ export function Hero() {
         <div className="absolute -bottom-[20%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-tr from-blue-50/40 to-transparent dark:from-blue-900/10 blur-3xl opacity-50" />
       </div>
 
-      <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
         
         {/* Left Column: Typography */}
         <div className="flex-1 lg:max-w-2xl">
@@ -26,14 +26,14 @@ export function Hero() {
             </FadeInStaggerItem>
             
             <FadeInStaggerItem>
-              <h1 className="text-6xl sm:text-7xl lg:text-[5.5rem] font-bold tracking-tighter text-[var(--fg-heading)] leading-[1.05] mb-8">
+              <h1 className="text-4xl md:text-6xl lg:text-[5.5rem] font-bold tracking-tighter text-[var(--fg-heading)] leading-[1.05] mb-6 md:mb-8">
                 Stop chasing companies. <br className="hidden md:block" />
                 <span className="text-primary-500">Start talking to buyers.</span>
               </h1>
             </FadeInStaggerItem>
 
             <FadeInStaggerItem>
-              <p className="text-xl md:text-2xl text-[var(--fg-default)] leading-relaxed mb-12 max-w-xl">
+              <p className="text-lg md:text-xl lg:text-2xl text-[var(--fg-default)] leading-relaxed mb-8 md:mb-12 max-w-xl">
                 We identify companies experiencing workforce challenges and connect them with the right corporate training providers.
               </p>
             </FadeInStaggerItem>

@@ -52,10 +52,10 @@ export function Testimonials() {
   const hasTestimonials = testimonials.length > 0;
 
   return (
-    <section className="py-24 bg-[var(--bg-base)] border-b border-[var(--border-default)]">
+    <section className="py-12 md:py-24 bg-[var(--bg-base)] border-b border-[var(--border-default)]">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-[var(--fg-heading)] mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tighter text-[var(--fg-heading)] mb-4">
             Trusted By Training Providers &amp; Companies Across the UAE
           </h2>
         </FadeIn>
@@ -70,7 +70,7 @@ export function Testimonials() {
           </div>
         ) : (
           <FadeIn delay={0.2}>
-            <div className="max-w-2xl mx-auto text-center bg-[var(--bg-subtle)] rounded-2xl p-12 border border-[var(--border-default)]">
+            <div className="max-w-2xl mx-auto text-center bg-[var(--bg-subtle)] rounded-2xl p-8 md:p-12 border border-[var(--border-default)]">
               <p className="text-xl text-[var(--fg-default)] leading-relaxed mb-6">
                 We&rsquo;re onboarding our first cohort of verified training providers in the UAE.
               </p>

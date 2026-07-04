@@ -185,7 +185,7 @@ export default function FindTrainingWizard() {
       
       {currentStep === 1 && (
         <>
-          <section className="bg-[var(--bg-base)] py-32 px-4 relative overflow-hidden border-b border-[var(--border-default)]">
+          <section className="bg-[var(--bg-base)] py-16 md:py-32 px-4 relative overflow-hidden border-b border-[var(--border-default)]">
             <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] bg-gradient-to-bl from-primary-500/10 to-transparent rounded-full blur-3xl" />
             <div className="container mx-auto max-w-5xl text-center relative z-10">
               <FadeIn staggerChildren={0.15}>
@@ -195,12 +195,12 @@ export default function FindTrainingWizard() {
                   </div>
                 </FadeInStaggerItem>
                 <FadeInStaggerItem>
-                  <h1 className="text-5xl md:text-7xl font-bold text-[var(--fg-heading)] mb-8 tracking-tighter leading-[1.05]">
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[var(--fg-heading)] mb-6 md:mb-8 tracking-tighter leading-[1.05]">
                     Find the perfect training partner in <span className="text-primary-500">48 hours</span>.
                   </h1>
                 </FadeInStaggerItem>
                 <FadeInStaggerItem>
-                  <p className="text-xl md:text-2xl text-[var(--fg-default)] mb-12 max-w-3xl mx-auto leading-relaxed">
+                  <p className="text-lg md:text-xl lg:text-2xl text-[var(--fg-default)] mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed">
                     Stop reviewing endless, generic proposals. We match you with vetted UAE & Middle East training providers based on your exact workforce challenges and budget.
                   </p>
                 </FadeInStaggerItem>
@@ -216,11 +216,11 @@ export default function FindTrainingWizard() {
             </div>
           </section>
 
-          <section className="py-24 px-4 bg-[var(--bg-subtle)] border-b border-[var(--border-default)]">
+          <section className="py-16 md:py-24 px-4 bg-[var(--bg-subtle)] border-b border-[var(--border-default)]">
             <div className="container mx-auto max-w-7xl">
-              <FadeIn className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-[var(--fg-heading)] mb-4">What we evaluate</h2>
-                <p className="text-[var(--fg-muted)] text-lg">Our 3-minute assessment captures exactly what top providers need to know.</p>
+              <FadeIn className="text-center mb-12 md:mb-16">
+                <h2 className="text-2xl md:text-4xl font-bold tracking-tighter text-[var(--fg-heading)] mb-4">What we evaluate</h2>
+                <p className="text-[var(--fg-muted)] text-base md:text-lg">Our 3-minute assessment captures exactly what top providers need to know.</p>
               </FadeIn>
               
               <div className="grid md:grid-cols-3 gap-8">
