@@ -61,7 +61,7 @@ export function ProvidersTeaser() {
                 Predictable pipeline, <br className="hidden md:block"/>zero retainer risk.
               </h2>
               <p className="text-lg text-slate-600 mb-8">
-                Stop paying marketing agencies thousands of dollars a month for unqualified clicks. We offer a true pay-per-performance model for premium training providers.
+                Stop paying $5,000/mo agency retainers for unqualified leads. With Pontlook, you only pay for highly-qualified opportunities that match your ideal customer profile. Starting at $150 per matched lead.
               </p>
               
               <ul className="space-y-4 mb-8">

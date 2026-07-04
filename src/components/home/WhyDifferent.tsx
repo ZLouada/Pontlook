@@ -20,8 +20,8 @@ export function WhyDifferent() {
     },
     {
       icon: <Search className="w-6 h-6 text-primary-500" />,
-      title: "Pontlook Market Intelligence",
-      description: "Specialized strictly in the Pontlook region. We understand the local localization requirements and cultural context.",
+      title: "Middle East Market Intelligence",
+      description: "Specialized strictly in the Middle East region. We understand the local localization requirements and cultural context.",
     },
   ];
 

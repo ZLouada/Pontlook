@@ -17,7 +17,7 @@ export function Industries() {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         <FadeIn>
           <h2 className="text-2xl font-bold text-slate-900 mb-8">
-            Serving High-Growth Pontlook Industries
+            Serving High-Growth Middle East Industries
           </h2>
           
           <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">

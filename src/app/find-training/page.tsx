@@ -181,8 +181,75 @@ export default function FindTrainingWizard() {
   }
 
   return (
-    <div className="flex-1 bg-slate-50 py-12 md:py-24">
-      <div className="container mx-auto max-w-3xl px-4 sm:px-6">
+    <div className="flex-1 bg-slate-50">
+      {/* Landing Page Content - Only show when on Step 1 to keep focus during form filling */}
+      {currentStep === 1 && (
+        <>
+          <section className="bg-slate-900 py-20 px-4 relative overflow-hidden">
+            <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
+            <div className="container mx-auto max-w-4xl text-center relative z-10">
+              <FadeIn>
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+                  Find the perfect training partner in <span className="text-primary-400">48 hours</span>.
+                </h1>
+                <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+                  Stop reviewing endless proposals. We match you with vetted Middle East training providers based on your exact workforce challenges and budget.
+                </p>
+                <Button size="lg" asChild className="h-14 px-8 text-lg bg-primary-500 hover:bg-primary-400 text-white shadow-xl shadow-primary-500/20">
+                  <a href="#assessment">Start Free Assessment</a>
+                </Button>
+              </FadeIn>
+            </div>
+          </section>
+
+          <section className="py-20 px-4 bg-white border-b border-slate-200/60">
+            <div className="container mx-auto max-w-5xl">
+              <div className="grid md:grid-cols-2 gap-16 items-center">
+                <FadeIn>
+                  <h2 className="text-3xl font-bold text-slate-900 mb-6">How the Assessment Works</h2>
+                  <div className="space-y-6">
+                    <div className="flex gap-4">
+                      <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold shrink-0">1</div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900">Share Your Challenges</h4>
+                        <p className="text-slate-600 text-sm mt-1">Select your specific pain points (e.g., low conversion rates, high turnover).</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold shrink-0">2</div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900">Define Scope & Budget</h4>
+                        <p className="text-slate-600 text-sm mt-1">Tell us your timeline, expected outcomes, and approved budget range.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold shrink-0">3</div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900">Get Matched</h4>
+                        <p className="text-slate-600 text-sm mt-1">Within 48 hours, we connect you with up to 3 specialized providers with a 90%+ match score.</p>
+                      </div>
+                    </div>
+                  </div>
+                </FadeIn>
+                <FadeIn delay={0.2}>
+                  <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                    <div className="inline-flex items-center gap-2 mb-4">
+                      <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">Verified Outcome</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">"We found a specialized leadership coach in 2 days."</h3>
+                    <p className="text-slate-600 italic mb-6">"Instead of interviewing 10 generic agencies, Pontlook introduced us to a provider who had specifically trained engineering managers in the Middle East."</p>
+                    <p className="text-sm font-medium text-slate-900">— HR Director, Series C Startup</p>
+                  </div>
+                </FadeIn>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* The Wizard Form */}
+      <div className="py-12 md:py-24" id="assessment">
+        <div className="container mx-auto max-w-3xl px-4 sm:px-6">
         
         {/* Progress Indicator */}
         <div className="mb-12">
@@ -471,6 +538,7 @@ export default function FindTrainingWizard() {
               )}
             </div>
           </form>
+        </div>
         </div>
       </div>
     </div>

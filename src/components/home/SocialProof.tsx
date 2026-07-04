@@ -1,11 +1,11 @@
 import { FadeIn } from "@/components/animations/FadeIn";
 
 export function SocialProof() {
-  const stats = [
-    { value: "48h", label: "Average Match Time" },
-    { value: "85%", label: "Lead-to-Meeting Rate" },
-    { value: "$2.5M+", label: "Verified Budget Pipeline" },
-    { value: "120+", label: "Active Pontlook Companies" },
+  const metrics = [
+    { value: "48h", label: "Average Match Time", subLabel: "Based on internal platform data" },
+    { value: "85%", label: "Lead-to-Meeting Rate", subLabel: "Based on internal platform data" },
+    { value: "$2.5M+", label: "Verified Budget Pipeline", subLabel: "Current projected pipeline" },
+    { value: "120+", label: "Active Middle East Companies", subLabel: "Companies onboarded to date" },
   ];
 
   return (
@@ -15,11 +15,12 @@ export function SocialProof() {
       
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center divide-x divide-primary-800">
-          {stats.map((stat, index) => (
+          {metrics.map((metric, index) => (
             <FadeIn key={index} delay={index * 0.1}>
               <div className="flex flex-col items-center">
-                <span className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</span>
-                <span className="text-sm font-medium text-primary-200 uppercase tracking-wider">{stat.label}</span>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{metric.value}</div>
+                <div className="text-sm font-medium text-primary-200 uppercase tracking-wider mb-1">{metric.label}</div>
+                {metric.subLabel && <div className="text-xs text-primary-400 opacity-80">{metric.subLabel}</div>}
               </div>
             </FadeIn>
           ))}

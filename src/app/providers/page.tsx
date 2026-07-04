@@ -21,7 +21,7 @@ export default function ProvidersPage() {
               A predictable pipeline of <span className="text-primary-500">budget-approved</span> training opportunities.
             </h1>
             <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-              We connect top-tier training providers with Pontlook companies actively seeking to solve workforce challenges. Pay only for qualified leads. Zero retainers.
+              We connect top-tier training providers with Middle East companies actively seeking to solve workforce challenges. Pay only for qualified leads, starting at $150 per opportunity. Zero retainers.
             </p>
             <Button size="lg" className="h-14 px-8 text-lg shadow-xl shadow-primary-500/20" asChild>
               <Link href="#apply">Apply to Partner Network</Link>
@@ -169,7 +169,7 @@ export default function ProvidersPage() {
           <FadeIn>
             <h2 className="text-3xl font-bold text-slate-900 mb-6">Join the Network</h2>
             <p className="text-slate-600 mb-10 max-w-xl mx-auto">
-              We maintain strict quality control. We only accept providers with proven track records, excellent references, and capacity to take on enterprise clients in the Pontlook region.
+              We maintain strict quality control. We only accept providers with proven track records, excellent references, and capacity to take on enterprise clients in the Middle East.
             </p>
             <form className="max-w-md mx-auto space-y-4 text-left">
               <div>
