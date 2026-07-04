@@ -1,4 +1,6 @@
-import { FadeIn } from "@/components/animations/FadeIn";
+"use client";
+
+import { motion } from "framer-motion";
 
 export function Industries() {
   const industries = [
@@ -12,25 +14,40 @@ export function Industries() {
     "Retail & E-commerce"
   ];
 
+  // Duplicate the array to create a seamless loop
+  const duplicatedIndustries = [...industries, ...industries, ...industries];
+
   return (
-    <section className="py-24 bg-white dark:bg-[var(--bg-base)] border-b border-slate-100 dark:border-[var(--border-default)]">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        <FadeIn>
-          <h2 className="text-2xl font-bold text-[var(--fg-heading)] mb-8">
-            Serving High-Growth Middle East Industries
-          </h2>
-          
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            {industries.map((industry, index) => (
-              <span 
-                key={index}
-                className="inline-flex items-center rounded-full bg-slate-50 dark:bg-[var(--bg-muted)] px-4 py-2 text-sm font-medium text-[var(--fg-default)] border border-slate-200 dark:border-[var(--border-default)] hover:border-primary-300 dark:hover:border-primary-700 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors cursor-default"
-              >
-                {industry}
-              </span>
-            ))}
-          </div>
-        </FadeIn>
+    <section className="py-24 bg-[var(--bg-subtle)] border-y border-[var(--border-default)] overflow-hidden">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-12">
+        <h2 className="text-sm font-semibold tracking-widest uppercase text-[var(--fg-faint)]">
+          Serving High-Growth Middle East Industries
+        </h2>
+      </div>
+      
+      <div className="relative w-full overflow-hidden flex">
+        {/* Gradient Masks for smooth fade at edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-[var(--bg-subtle)] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-[var(--bg-subtle)] to-transparent z-10 pointer-events-none" />
+        
+        <motion.div
+          className="flex whitespace-nowrap gap-6 shrink-0"
+          animate={{ x: ["0%", "-33.333333%"] }}
+          transition={{
+            repeat: Infinity,
+            ease: "linear",
+            duration: 40,
+          }}
+        >
+          {duplicatedIndustries.map((industry, index) => (
+            <div 
+              key={index}
+              className="inline-flex items-center rounded-full bg-[var(--surface-card)] px-8 py-4 text-sm md:text-base font-medium text-[var(--fg-heading)] border border-[var(--border-default)] hover:border-primary-500 hover:text-primary-500 transition-colors cursor-default"
+            >
+              {industry}
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

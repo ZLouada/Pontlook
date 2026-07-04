@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { GlobalLoader } from "@/components/animations/GlobalLoader";
 import "./globals.css";
 
 const inter = Inter({
@@ -44,6 +45,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <GlobalLoader />
           <Navbar />
           <main className="flex-1 flex flex-col">{children}</main>
           <Footer />

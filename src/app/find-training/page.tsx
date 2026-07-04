@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { FadeIn } from "@/components/animations/FadeIn";
+import { FadeIn, FadeInStaggerItem } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
-import { Check, ChevronRight, ChevronLeft } from "lucide-react";
+import { Check, ChevronRight, ChevronLeft, ArrowRight, Target, Clock } from "lucide-react";
 
 
 const step1Schema = z.object({
@@ -185,60 +185,152 @@ export default function FindTrainingWizard() {
       
       {currentStep === 1 && (
         <>
-          <section className="bg-slate-900 dark:bg-[var(--bg-muted)] py-20 px-4 relative overflow-hidden">
-            <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
-            <div className="container mx-auto max-w-4xl text-center relative z-10">
-              <FadeIn>
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-                  Find the perfect training partner in <span className="text-primary-400">48 hours</span>.
-                </h1>
-                <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-                  Stop reviewing endless proposals. We match you with vetted Middle East training providers based on your exact workforce challenges and budget.
-                </p>
-                <Button size="lg" asChild className="h-14 px-8 text-lg bg-primary-500 hover:bg-primary-400 text-white shadow-xl shadow-primary-500/20">
-                  <a href="#assessment">Start Free Assessment</a>
-                </Button>
+          <section className="bg-[var(--bg-base)] py-32 px-4 relative overflow-hidden border-b border-[var(--border-default)]">
+            <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] bg-gradient-to-bl from-primary-500/10 to-transparent rounded-full blur-3xl" />
+            <div className="container mx-auto max-w-5xl text-center relative z-10">
+              <FadeIn staggerChildren={0.15}>
+                <FadeInStaggerItem>
+                  <div className="inline-flex items-center rounded-full border border-primary-200 dark:border-primary-800/50 bg-primary-50 dark:bg-primary-900/30 px-3 py-1 text-sm font-semibold text-primary-700 dark:text-primary-400 mb-8 uppercase tracking-widest">
+                    For Companies
+                  </div>
+                </FadeInStaggerItem>
+                <FadeInStaggerItem>
+                  <h1 className="text-5xl md:text-7xl font-bold text-[var(--fg-heading)] mb-8 tracking-tighter leading-[1.05]">
+                    Find the perfect training partner in <span className="text-primary-500">48 hours</span>.
+                  </h1>
+                </FadeInStaggerItem>
+                <FadeInStaggerItem>
+                  <p className="text-xl md:text-2xl text-[var(--fg-default)] mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Stop reviewing endless, generic proposals. We match you with vetted UAE & Middle East training providers based on your exact workforce challenges and budget.
+                  </p>
+                </FadeInStaggerItem>
+                <FadeInStaggerItem>
+                  <Button size="lg" asChild className="h-16 px-10 text-lg shadow-xl shadow-primary-500/20 group">
+                    <a href="#assessment">
+                      Start Free Assessment
+                      <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                    </a>
+                  </Button>
+                </FadeInStaggerItem>
               </FadeIn>
             </div>
           </section>
 
-          <section className="py-20 px-4 bg-white dark:bg-[var(--bg-base)] border-b border-slate-200 dark:border-[var(--border-default)]">
-            <div className="container mx-auto max-w-5xl">
+          <section className="py-24 px-4 bg-[var(--bg-subtle)] border-b border-[var(--border-default)]">
+            <div className="container mx-auto max-w-7xl">
+              <FadeIn className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-[var(--fg-heading)] mb-4">What we evaluate</h2>
+                <p className="text-[var(--fg-muted)] text-lg">Our 3-minute assessment captures exactly what top providers need to know.</p>
+              </FadeIn>
+              
+              <div className="grid md:grid-cols-3 gap-8">
+                <FadeIn delay={0.1}>
+                  <div className="bg-[var(--surface-card)] rounded-2xl p-8 border border-[var(--border-default)] h-full shadow-sm hover:shadow-xl dark:hover:shadow-black/20 transition-all">
+                    <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold mb-6">1</div>
+                    <h4 className="font-bold text-xl text-[var(--fg-heading)] mb-3">Core Pain Points</h4>
+                    <p className="text-[var(--fg-muted)] mb-6 text-sm">Example questions:</p>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3 text-sm text-[var(--fg-default)] bg-[var(--bg-muted)] p-3 rounded-lg border border-[var(--border-default)]">
+                        <span className="text-primary-500 shrink-0 mt-0.5 font-bold">Q:</span>
+                        "What specific behavior change are you trying to achieve with this training?"
+                      </li>
+                      <li className="flex items-start gap-3 text-sm text-[var(--fg-default)] bg-[var(--bg-muted)] p-3 rounded-lg border border-[var(--border-default)]">
+                        <span className="text-primary-500 shrink-0 mt-0.5 font-bold">Q:</span>
+                        "What metrics will determine if this initiative was successful?"
+                      </li>
+                    </ul>
+                  </div>
+                </FadeIn>
+                
+                <FadeIn delay={0.2}>
+                  <div className="bg-[var(--surface-card)] rounded-2xl p-8 border border-[var(--border-default)] h-full shadow-sm hover:shadow-xl dark:hover:shadow-black/20 transition-all">
+                    <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold mb-6">2</div>
+                    <h4 className="font-bold text-xl text-[var(--fg-heading)] mb-3">Audience & Context</h4>
+                    <p className="text-[var(--fg-muted)] mb-6 text-sm">Example questions:</p>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3 text-sm text-[var(--fg-default)] bg-[var(--bg-muted)] p-3 rounded-lg border border-[var(--border-default)]">
+                        <span className="text-primary-500 shrink-0 mt-0.5 font-bold">Q:</span>
+                        "How many employees need training, and what is their seniority level?"
+                      </li>
+                      <li className="flex items-start gap-3 text-sm text-[var(--fg-default)] bg-[var(--bg-muted)] p-3 rounded-lg border border-[var(--border-default)]">
+                        <span className="text-primary-500 shrink-0 mt-0.5 font-bold">Q:</span>
+                        "Do you require in-person workshops in the UAE, or virtual sessions?"
+                      </li>
+                    </ul>
+                  </div>
+                </FadeIn>
+
+                <FadeIn delay={0.3}>
+                  <div className="bg-[var(--surface-card)] rounded-2xl p-8 border border-[var(--border-default)] h-full shadow-sm hover:shadow-xl dark:hover:shadow-black/20 transition-all">
+                    <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold mb-6">3</div>
+                    <h4 className="font-bold text-xl text-[var(--fg-heading)] mb-3">Budget & Timeline</h4>
+                    <p className="text-[var(--fg-muted)] mb-6 text-sm">Example questions:</p>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3 text-sm text-[var(--fg-default)] bg-[var(--bg-muted)] p-3 rounded-lg border border-[var(--border-default)]">
+                        <span className="text-primary-500 shrink-0 mt-0.5 font-bold">Q:</span>
+                        "Has budget been officially approved for this initiative?"
+                      </li>
+                      <li className="flex items-start gap-3 text-sm text-[var(--fg-default)] bg-[var(--bg-muted)] p-3 rounded-lg border border-[var(--border-default)]">
+                        <span className="text-primary-500 shrink-0 mt-0.5 font-bold">Q:</span>
+                        "When are you looking to start the first training session?"
+                      </li>
+                    </ul>
+                  </div>
+                </FadeIn>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-24 px-4 bg-[var(--bg-base)] border-b border-[var(--border-default)]">
+            <div className="container mx-auto max-w-4xl">
               <div className="grid md:grid-cols-2 gap-16 items-center">
                 <FadeIn>
-                  <h2 className="text-3xl font-bold text-[var(--fg-heading)] mb-6">How the Assessment Works</h2>
-                  <div className="space-y-6">
-                    <div className="flex gap-4">
-                      <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 flex items-center justify-center font-bold shrink-0">1</div>
-                      <div>
-                        <h4 className="font-semibold text-[var(--fg-heading)]">Share Your Challenges</h4>
-                        <p className="text-[var(--fg-default)] text-sm mt-1">Select your specific pain points (e.g., low conversion rates, high turnover).</p>
+                  <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-[var(--fg-heading)] mb-8">What happens next?</h2>
+                  <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-[var(--border-default)] before:to-transparent">
+                    <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[var(--bg-base)] bg-primary-500 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">
+                        <Check className="w-4 h-4" />
+                      </div>
+                      <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[var(--surface-card)] p-5 rounded-xl border border-[var(--border-default)] shadow-sm">
+                        <h4 className="font-bold text-[var(--fg-heading)] mb-1">We Score & Match</h4>
+                        <p className="text-sm text-[var(--fg-muted)]">Within 48 hours, our algorithm cross-references your needs against our vetted network of UAE providers.</p>
                       </div>
                     </div>
-                    <div className="flex gap-4">
-                      <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 flex items-center justify-center font-bold shrink-0">2</div>
-                      <div>
-                        <h4 className="font-semibold text-[var(--fg-heading)]">Define Scope & Budget</h4>
-                        <p className="text-[var(--fg-default)] text-sm mt-1">Tell us your timeline, expected outcomes, and approved budget range.</p>
+                    <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[var(--bg-base)] bg-[var(--bg-muted)] text-[var(--fg-faint)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                      <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[var(--surface-card)] p-5 rounded-xl border border-[var(--border-default)] shadow-sm">
+                        <h4 className="font-bold text-[var(--fg-heading)] mb-1">Receive Intros</h4>
+                        <p className="text-sm text-[var(--fg-muted)]">We introduce you to up to 3 highly specialized providers that have confirmed availability and fit.</p>
                       </div>
                     </div>
-                    <div className="flex gap-4">
-                      <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 flex items-center justify-center font-bold shrink-0">3</div>
-                      <div>
-                        <h4 className="font-semibold text-[var(--fg-heading)]">Get Matched</h4>
-                        <p className="text-[var(--fg-default)] text-sm mt-1">Within 48 hours, we connect you with up to 3 specialized providers with a 90%+ match score.</p>
+                    <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[var(--bg-base)] bg-[var(--bg-muted)] text-[var(--fg-faint)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <Target className="w-4 h-4" />
+                      </div>
+                      <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[var(--surface-card)] p-5 rounded-xl border border-[var(--border-default)] shadow-sm">
+                        <h4 className="font-bold text-[var(--fg-heading)] mb-1">You Choose</h4>
+                        <p className="text-sm text-[var(--fg-muted)]">Review their profiles, take introductory calls, and choose the perfect partner for your team.</p>
                       </div>
                     </div>
                   </div>
                 </FadeIn>
+                
                 <FadeIn delay={0.2}>
-                  <div className="bg-slate-50 dark:bg-[var(--bg-muted)] p-8 rounded-2xl border border-slate-200 dark:border-[var(--border-default)]">
+                  <div className="bg-[var(--bg-muted)] p-8 rounded-2xl border border-[var(--border-default)]">
                     <div className="inline-flex items-center gap-2 mb-4">
-                      <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full border border-emerald-100 dark:border-emerald-800/50">Verified Outcome</span>
+                      <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 rounded-full border border-emerald-100 dark:border-emerald-800/50">Verified Outcome</span>
                     </div>
-                    <h3 className="text-xl font-bold text-[var(--fg-heading)] mb-4">"We found a specialized leadership coach in 2 days."</h3>
-                    <p className="text-[var(--fg-default)] italic mb-6">"Instead of interviewing 10 generic agencies, Pontlook introduced us to a provider who had specifically trained engineering managers in the Middle East."</p>
-                    <p className="text-sm font-medium text-[var(--fg-heading)]">— HR Director, Series C Startup</p>
+                    <h3 className="text-2xl font-bold tracking-tight text-[var(--fg-heading)] mb-6">"We found a specialized leadership coach in 2 days."</h3>
+                    <p className="text-[var(--fg-default)] text-lg leading-relaxed italic mb-8">"Instead of interviewing 10 generic agencies, Pontlook introduced us to a provider who had specifically trained engineering managers in the Middle East. It saved us weeks."</p>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-[var(--border-default)] flex items-center justify-center font-bold text-[var(--fg-muted)]">HR</div>
+                      <div>
+                        <p className="text-sm font-bold text-[var(--fg-heading)]">HR Director</p>
+                        <p className="text-xs text-[var(--fg-muted)]">Series C Tech Startup, Dubai</p>
+                      </div>
+                    </div>
                   </div>
                 </FadeIn>
               </div>

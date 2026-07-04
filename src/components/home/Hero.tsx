@@ -1,131 +1,130 @@
-"use client";
-
-import Link from "next/link";
+import { FadeIn, FadeInStaggerItem } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
-import { FadeIn } from "@/components/animations/FadeIn";
-import { motion } from "framer-motion";
-import { CheckCircle2, TrendingUp, Building2, Wallet } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, CheckCircle2, DollarSign, Users } from "lucide-react";
+import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-[var(--bg-base)] pt-24 pb-32">
+    <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-[var(--bg-base)] pt-32 pb-24 border-b border-[var(--border-default)]">
       
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-50/50 via-white to-white dark:from-primary-900/20 dark:via-[var(--bg-base)] dark:to-[var(--bg-base)] -z-10" />
-      <div className="absolute right-0 top-0 -translate-y-1/4 translate-x-1/4 w-[800px] h-[800px] bg-primary-100/40 dark:bg-primary-800/20 rounded-full blur-3xl -z-10" />
+      {/* Abstract Background Elements */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-[20%] -right-[10%] w-[70vw] h-[70vw] rounded-full bg-gradient-to-br from-primary-50/40 to-transparent dark:from-primary-900/10 blur-3xl opacity-50" />
+        <div className="absolute -bottom-[20%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-tr from-blue-50/40 to-transparent dark:from-blue-900/10 blur-3xl opacity-50" />
+      </div>
 
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
-          
-          <div className="max-w-2xl">
-            <FadeIn>
-              <div className="inline-flex items-center rounded-full border border-primary-100 bg-primary-50/50 dark:border-primary-800/50 dark:bg-primary-900/30 px-3 py-1 text-sm text-primary-500 dark:text-primary-400 mb-6">
-                <span className="flex h-2 w-2 rounded-full bg-primary-500 mr-2"></span>
-                Pontlook's Verified Training Marketplace
+      <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+        
+        {/* Left Column: Typography */}
+        <div className="flex-1 lg:max-w-2xl">
+          <FadeIn staggerChildren={0.15} delay={0.2} direction="none">
+            <FadeInStaggerItem>
+              <div className="inline-flex items-center rounded-full border border-primary-200 dark:border-primary-800/50 bg-primary-50 dark:bg-primary-900/30 px-3 py-1 text-sm text-primary-600 dark:text-primary-400 mb-8 font-medium">
+                <span className="flex h-2 w-2 rounded-full bg-primary-500 mr-2 animate-pulse"></span>
+                The UAE & Middle East Training Marketplace
               </div>
-            </FadeIn>
+            </FadeInStaggerItem>
             
-            <FadeIn delay={0.1}>
-              <h1 className="text-5xl lg:text-6xl tracking-tight text-slate-900 dark:text-[var(--fg-heading)] mb-6 leading-[1.1]">
-                Stop chasing companies. Start talking to those that <span className="text-primary-500">already need training.</span>
+            <FadeInStaggerItem>
+              <h1 className="text-6xl sm:text-7xl lg:text-[5.5rem] font-bold tracking-tighter text-[var(--fg-heading)] leading-[1.05] mb-8">
+                Stop chasing companies. <br className="hidden md:block" />
+                <span className="text-primary-500">Start talking to buyers.</span>
               </h1>
-            </FadeIn>
+            </FadeInStaggerItem>
 
-            <FadeIn delay={0.2}>
-              <p className="text-lg text-slate-600 dark:text-[var(--fg-muted)] mb-8 leading-relaxed max-w-xl">
-                We identify businesses experiencing workforce challenges and connect them with the right corporate training providers. No retainers. Just verified opportunities.
+            <FadeInStaggerItem>
+              <p className="text-xl md:text-2xl text-[var(--fg-default)] leading-relaxed mb-12 max-w-xl">
+                We identify companies experiencing workforce challenges and connect them with the right corporate training providers.
               </p>
-            </FadeIn>
+            </FadeInStaggerItem>
 
-            <FadeIn delay={0.3} className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" asChild className="h-12 px-8 text-base shadow-lg shadow-primary-500/20">
-                <Link href="/providers">I'm a Training Provider</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="h-12 px-8 text-base">
-                <Link href="/find-training">I'm Looking for Training</Link>
-              </Button>
-            </FadeIn>
-          </div>
+            <FadeInStaggerItem>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="h-14 px-8 text-lg w-full sm:w-auto shadow-xl shadow-primary-500/20 group" asChild>
+                  <Link href="/providers">
+                    For Training Providers
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="h-14 px-8 text-lg w-full sm:w-auto bg-[var(--surface-card)]" asChild>
+                  <Link href="/find-training">
+                    I Need Training
+                  </Link>
+                </Button>
+              </div>
+            </FadeInStaggerItem>
+          </FadeIn>
+        </div>
 
-          
-          <div className="relative lg:h-[600px] flex items-center justify-center">
-            <FadeIn delay={0.4} direction="left" className="relative w-full max-w-md">
-              
-              <div className="relative rounded-2xl border border-slate-200 dark:border-[var(--border-default)] bg-white dark:bg-[var(--surface-card)]/90 backdrop-blur-xl shadow-2xl shadow-slate-200/50 dark:shadow-black/30 p-6 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-400 to-primary-500"></div>
-                
-                <div className="flex justify-between items-start mb-6">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full border border-emerald-100 dark:border-emerald-800/50">
-                        Hot Opportunity
-                      </span>
-                      <span className="text-xs font-medium text-slate-500 dark:text-[var(--fg-faint)]">Just verified</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-[var(--fg-heading)]">Enterprise Sales Training</h3>
-                  </div>
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary-50 dark:bg-primary-900/40 text-primary-500 dark:text-primary-400">
-                    <TrendingUp className="w-6 h-6" />
+        {/* Right Column: Hero Visual (Hot Opportunity Card) */}
+        <div className="flex-1 w-full max-w-xl lg:max-w-none">
+          <FadeIn parallaxOffset={-40} delay={0.4} direction="up" className="relative">
+            
+            <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-8 shadow-2xl shadow-black/5 dark:shadow-black/20">
+              <div className="flex items-center justify-between mb-8 pb-6 border-b border-[var(--border-default)]">
+                <div className="inline-flex items-center rounded-full bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-900/50 px-3 py-1 text-sm font-semibold text-red-600 dark:text-red-400">
+                  <span className="flex h-2 w-2 rounded-full bg-red-500 mr-2 animate-pulse"></span>
+                  Hot Opportunity
+                </div>
+                <span className="text-sm font-medium text-[var(--fg-faint)]">Just verified</span>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-[var(--fg-heading)] mb-2">Leadership Development Program</h3>
+                  <div className="flex items-center gap-2 text-[var(--fg-muted)]">
+                    <BriefcaseBusiness className="w-4 h-4" />
+                    <span>Technology & AI Sector (Series C)</span>
                   </div>
                 </div>
 
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
-                    <Building2 className="w-5 h-5 text-slate-400 dark:text-slate-500" />
-                    <div>
-                      <p className="text-sm font-medium text-slate-900 dark:text-[var(--fg-heading)]">Fintech Scale-up</p>
-                      <p className="text-xs">Series B • Dubai, UAE</p>
+                <div className="grid grid-cols-2 gap-4 py-4">
+                  <div className="bg-[var(--bg-subtle)] rounded-xl p-4 border border-[var(--border-default)]">
+                    <div className="flex items-center gap-2 text-[var(--fg-faint)] text-sm mb-1">
+                      <DollarSign className="w-4 h-4" />
+                      Budget
                     </div>
+                    <div className="font-semibold text-[var(--fg-heading)]">Approved</div>
                   </div>
-                  <div className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
-                    <Wallet className="w-5 h-5 text-slate-400 dark:text-slate-500" />
-                    <div>
-                      <p className="text-sm font-medium text-slate-900 dark:text-[var(--fg-heading)]">Budget Approved</p>
-                      <p className="text-xs">$25k - $40k Range</p>
+                  <div className="bg-[var(--bg-subtle)] rounded-xl p-4 border border-[var(--border-default)]">
+                    <div className="flex items-center gap-2 text-[var(--fg-faint)] text-sm mb-1">
+                      <Users className="w-4 h-4" />
+                      Audience
                     </div>
+                    <div className="font-semibold text-[var(--fg-heading)]">25 Managers</div>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
-                  <p className="text-sm font-medium text-slate-900 dark:text-[var(--fg-heading)] mb-2">Verified Pain Points:</p>
+                <div>
+                  <h4 className="font-semibold text-[var(--fg-heading)] mb-2">Verified Pain Points:</h4>
                   <ul className="space-y-2">
-                    {[
-                      "Low conversion on enterprise deals",
-                      "Inconsistent sales methodology across 20 reps",
-                      "Need closing skills for 6-month sales cycles"
-                    ].map((point, i) => (
-                      <motion.li 
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.8 + (i * 0.2) }}
-                        key={i} 
-                        className="flex items-start gap-2 text-sm text-slate-600 dark:text-[var(--fg-muted)]"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-primary-500 mt-0.5 shrink-0" />
-                        <span>{point}</span>
-                      </motion.li>
-                    ))}
+                    <li className="flex items-start gap-2 text-[var(--fg-muted)] text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
+                      Recently promoted managers struggling with delegation
+                    </li>
+                    <li className="flex items-start gap-2 text-[var(--fg-muted)] text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
+                      High turnover in engineering teams
+                    </li>
                   </ul>
                 </div>
               </div>
+            </div>
 
-              
-              <motion.div 
-                animate={{ y: [0, -10, 0] }} 
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute -right-12 -top-12 bg-white dark:bg-[var(--surface-card)] p-4 rounded-xl shadow-xl dark:shadow-black/40 border border-slate-100 dark:border-[var(--border-default)] flex items-center gap-3"
-              >
-                <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
-                  <span className="text-lg font-bold text-blue-600 dark:text-blue-400">92</span>
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 dark:text-[var(--fg-faint)] font-medium">Match Score</p>
-                  <p className="text-sm font-bold text-slate-900 dark:text-[var(--fg-heading)]">Excellent Fit</p>
-                </div>
-              </motion.div>
-            </FadeIn>
-          </div>
+            {/* Floating Element */}
+            <div className="absolute -bottom-6 -right-6 bg-[var(--surface-card)] rounded-xl p-4 shadow-xl border border-[var(--border-default)] flex items-center gap-4 hidden sm:flex">
+              <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                <span className="font-bold text-blue-600 dark:text-blue-400">92%</span>
+              </div>
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-wider text-[var(--fg-faint)]">Match Score</div>
+                <div className="font-bold text-[var(--fg-heading)]">Excellent Fit</div>
+              </div>
+            </div>
+            
+          </FadeIn>
         </div>
+        
       </div>
     </section>
   );
