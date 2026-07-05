@@ -201,7 +201,7 @@ export default function FindTrainingWizard() {
                 </FadeInStaggerItem>
                 <FadeInStaggerItem>
                   <p className="text-lg md:text-xl lg:text-2xl text-[var(--fg-default)] mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed">
-                    Stop reviewing endless, generic proposals. We match you with vetted UAE & Middle East training providers based on your exact workforce challenges and budget.
+                    Stop reviewing endless, generic proposals. We match you with vetted GCC training providers based on your exact workforce challenges and budget.
                   </p>
                 </FadeInStaggerItem>
                 <FadeInStaggerItem>
@@ -254,7 +254,7 @@ export default function FindTrainingWizard() {
                       </li>
                       <li className="flex items-start gap-3 text-sm text-[var(--fg-default)] bg-[var(--bg-muted)] p-3 rounded-lg border border-[var(--border-default)]">
                         <span className="text-primary-500 shrink-0 mt-0.5 font-bold">Q:</span>
-                        "Do you require in-person workshops in the UAE, or virtual sessions?"
+                        "Do you require in-person workshops in the GCC, or virtual sessions?"
                       </li>
                     </ul>
                   </div>
@@ -293,7 +293,7 @@ export default function FindTrainingWizard() {
                       </div>
                       <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[var(--surface-card)] p-5 rounded-xl border border-[var(--border-default)] shadow-sm">
                         <h4 className="font-bold text-[var(--fg-heading)] mb-1">We Score & Match</h4>
-                        <p className="text-sm text-[var(--fg-muted)]">Within 48 hours, our algorithm cross-references your needs against our vetted network of UAE providers.</p>
+                        <p className="text-sm text-[var(--fg-muted)]">Within 48 hours, our algorithm cross-references your needs against our vetted network of GCC providers.</p>
                       </div>
                     </div>
                     <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
@@ -323,7 +323,7 @@ export default function FindTrainingWizard() {
                       <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 rounded-full border border-emerald-100 dark:border-emerald-800/50">Verified Outcome</span>
                     </div>
                     <h3 className="text-2xl font-bold tracking-tight text-[var(--fg-heading)] mb-6">"We found a specialized leadership coach in 2 days."</h3>
-                    <p className="text-[var(--fg-default)] text-lg leading-relaxed italic mb-8">"Instead of interviewing 10 generic agencies, Pontlook introduced us to a provider who had specifically trained engineering managers in the Middle East. It saved us weeks."</p>
+                    <p className="text-[var(--fg-default)] text-lg leading-relaxed italic mb-8">"Instead of interviewing 10 generic agencies, Pontlook introduced us to a provider who had specifically trained engineering managers in the GCC. It saved us weeks."</p>
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-full bg-[var(--border-default)] flex items-center justify-center font-bold text-[var(--fg-muted)]">HR</div>
                       <div>
@@ -564,7 +564,7 @@ export default function FindTrainingWizard() {
                       {...register("expectedOutcomes")} 
                       rows={5}
                       className="w-full rounded-md border border-slate-300 px-4 py-3 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none resize-none" 
-                      placeholder="e.g., Increase sales closing rate by 15%, reduce manager turnover, ensure compliance with new UAE labor laws..."
+                      placeholder="e.g., Increase sales closing rate by 15%, reduce manager turnover, ensure compliance with new GCC labor laws..."
                     />
                     {errors.expectedOutcomes && <p className="text-red-500 text-xs mt-1">{errors.expectedOutcomes.message}</p>}
                   </div>

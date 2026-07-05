@@ -6,7 +6,7 @@ export function BlogPreview() {
   const posts = [
     {
       category: "Market Intelligence",
-      title: "State of Corporate Training in the UAE: 2026 Outlook",
+      title: "The State of Leadership Training in the GCC (2026)",
       description: "Analyzing the shift towards specialized soft-skills and AI adoption across Dubai and Abu Dhabi enterprises.",
       href: "#",
     },
@@ -30,7 +30,7 @@ export function BlogPreview() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <FadeIn>
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Market Insights</h2>
-            <p className="text-slate-600 dark:text-slate-300">Data-backed intelligence for the UAE corporate training industry.</p>
+            <p className="text-slate-600 dark:text-slate-300">Data-backed intelligence for the GCC corporate training industry.</p>
           </FadeIn>
           <FadeIn delay={0.2} direction="none">
             <Link href="/blog" className="inline-flex items-center text-sm font-medium text-primary-600 hover:text-primary-700">

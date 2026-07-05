@@ -31,7 +31,7 @@ export function Navbar() {
             <span className="text-2xl font-bold tracking-tighter text-[var(--fg-heading)]">Pontlook</span>
           </Link>
           
-          <div className="flex items-center gap-6 z-50 relative">
+          <div className="flex items-center gap-8 z-50 relative">
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--fg-heading)] tracking-wide">
               <Link href="/providers" className="hover:opacity-60 transition-opacity">
                 For Providers

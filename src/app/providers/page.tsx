@@ -21,7 +21,7 @@ export default function ProvidersPage() {
               A predictable pipeline of <span className="text-primary-500 dark:text-primary-400">budget-approved</span> training opportunities.
             </h1>
             <p className="text-lg md:text-xl text-[var(--fg-default)] mb-8 md:mb-10 max-w-2xl mx-auto">
-              We connect top-tier training providers with Middle East companies actively seeking to solve workforce challenges. Pay only for qualified leads, starting at $150 per opportunity. Zero retainers.
+              We connect top-tier training providers with GCC companies actively seeking to solve workforce challenges. Pay only for qualified leads, starting at $150 per opportunity. Zero retainers.
             </p>
             <Button size="lg" className="h-14 px-8 text-lg shadow-xl shadow-primary-500/20" asChild>
               <Link href="#apply">Apply to Partner Network</Link>
@@ -170,7 +170,7 @@ export default function ProvidersPage() {
           <FadeIn>
             <h2 className="text-2xl md:text-3xl font-bold text-[var(--fg-heading)] mb-4 md:mb-6">Join the Network</h2>
             <p className="text-sm md:text-base text-[var(--fg-default)] mb-8 md:mb-10 max-w-xl mx-auto">
-              We maintain strict quality control. We only accept providers with proven track records, excellent references, and capacity to take on enterprise clients in the Middle East.
+              We maintain strict quality control. We only accept providers with proven track records, excellent references, and capacity to take on enterprise clients in the GCC.
             </p>
             <form className="max-w-md mx-auto space-y-4 text-left">
               <div>

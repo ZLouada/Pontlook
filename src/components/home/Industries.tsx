@@ -21,7 +21,7 @@ export function Industries() {
     <section className="py-12 md:py-24 bg-[var(--bg-subtle)] border-y border-[var(--border-default)] overflow-hidden">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-8 md:mb-12">
         <h2 className="text-sm font-semibold tracking-widest uppercase text-[var(--fg-faint)]">
-          Serving High-Growth Middle East Industries
+          Serving High-Growth GCC Industries
         </h2>
       </div>
       
@@ -42,6 +42,7 @@ export function Industries() {
           {duplicatedIndustries.map((industry, index) => (
             <div 
               key={index}
+              aria-hidden={index >= industries.length ? "true" : undefined}
               className="inline-flex items-center rounded-full bg-[var(--surface-card)] px-8 py-4 text-sm md:text-base font-medium text-[var(--fg-heading)] border border-[var(--border-default)] hover:border-primary-500 hover:text-primary-500 transition-colors cursor-default"
             >
               {industry}

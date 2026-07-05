@@ -19,10 +19,10 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Pontlook | Corporate Training Matchmaking Platform",
-  description: "Stop chasing companies. Start talking to companies that already need training. Connect with verified businesses experiencing workforce challenges.",
+  description: "The premier B2B matchmaking platform for corporate training in the GCC. Connect with verified buyers and specialized training providers.",
   openGraph: {
     title: "Pontlook | Corporate Training Matchmaking Platform",
-    description: "Connect with verified businesses experiencing workforce challenges.",
+    description: "The premier B2B matchmaking platform for corporate training in the GCC. Connect with verified buyers and specialized training providers.",
     type: "website",
   },
 };

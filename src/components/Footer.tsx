@@ -22,7 +22,7 @@ export function Footer() {
           
           <div className="mt-12 md:mt-0">
             <p className="text-lg text-[var(--fg-muted)] max-w-sm">
-              The premier corporate training matchmaking platform for the Middle East.
+              The premier corporate training matchmaking platform for the GCC.
             </p>
           </div>
         </div>

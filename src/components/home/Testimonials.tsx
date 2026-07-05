@@ -56,7 +56,7 @@ export function Testimonials() {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn className="text-center mb-16">
           <h2 className="text-2xl md:text-4xl font-bold tracking-tighter text-[var(--fg-heading)] mb-4">
-            Trusted By Training Providers &amp; Companies Across the UAE
+            Trusted By Training Providers &amp; Companies Across the GCC
           </h2>
         </FadeIn>
 

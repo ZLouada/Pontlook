@@ -1,7 +1,10 @@
+"use client";
+
 import { FadeIn, FadeInStaggerItem } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BriefcaseBusiness, CheckCircle2, DollarSign, Users } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export function Hero() {
   return (
@@ -13,7 +16,7 @@ export function Hero() {
         <div className="absolute -bottom-[20%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-tr from-blue-50/40 to-transparent dark:from-blue-900/10 blur-3xl opacity-50" />
       </div>
 
-      <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+      <div className="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
         
         {/* Left Column: Typography */}
         <div className="flex-1 lg:max-w-2xl">
@@ -21,7 +24,7 @@ export function Hero() {
             <FadeInStaggerItem>
               <div className="inline-flex items-center rounded-full border border-primary-200 dark:border-primary-800/50 bg-primary-50 dark:bg-primary-900/30 px-3 py-1 text-sm text-primary-600 dark:text-primary-400 mb-8 font-medium">
                 <span className="flex h-2 w-2 rounded-full bg-primary-500 mr-2 animate-pulse"></span>
-                The UAE & Middle East Training Marketplace
+                The GCC Training Marketplace
               </div>
             </FadeInStaggerItem>
             
@@ -58,9 +61,14 @@ export function Hero() {
 
         {/* Right Column: Hero Visual (Hot Opportunity Card) */}
         <div className="flex-1 w-full max-w-xl lg:max-w-none">
-          <FadeIn parallaxOffset={-40} delay={0.4} direction="up" className="relative">
+          <FadeIn parallaxOffset={-20} delay={0.4} direction="up" className="relative">
             
-            <div className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-8 shadow-2xl shadow-black/5 dark:shadow-black/20">
+            <motion.div 
+              className="bg-[var(--surface-card)] border border-[var(--border-default)] rounded-2xl p-8 shadow-2xl shadow-black/5 dark:shadow-black/20"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ scale: 1.02 }}
+            >
               <div className="flex items-center justify-between mb-8 pb-6 border-b border-[var(--border-default)]">
                 <div className="inline-flex items-center rounded-full bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-900/50 px-3 py-1 text-sm font-semibold text-red-600 dark:text-red-400">
                   <span className="flex h-2 w-2 rounded-full bg-red-500 mr-2 animate-pulse"></span>
@@ -109,7 +117,7 @@ export function Hero() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Floating Element */}
             <div className="absolute -bottom-6 -right-6 bg-[var(--surface-card)] rounded-xl p-4 shadow-xl border border-[var(--border-default)] flex items-center gap-4 hidden sm:flex">

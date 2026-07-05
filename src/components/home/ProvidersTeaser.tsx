@@ -83,7 +83,7 @@ export function ProvidersTeaser() {
               
               <FadeInStaggerItem>
                 <ul className="space-y-4 md:space-y-5 mb-10 md:mb-12">
-                  {["Access exclusively to verified UAE & Middle East companies", "Detailed intelligence before you accept a lead", "100% replacement guarantee on bad data"].map((item, i) => (
+                  {["Access exclusively to verified GCC companies", "Detailed intelligence before you accept a lead", "100% replacement guarantee on bad data"].map((item, i) => (
                     <li key={i} className="flex items-start gap-4 text-base md:text-lg text-[var(--fg-default)] font-medium">
                       <div className="w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-4 h-4 text-primary-600 dark:text-primary-400" />

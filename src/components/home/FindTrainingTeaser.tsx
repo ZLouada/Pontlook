@@ -70,7 +70,7 @@ export function FindTrainingTeaser() {
                     </div>
                     <div>
                       <h4 className="text-lg md:text-xl font-bold text-[var(--fg-heading)] mb-2">2. We Match You</h4>
-                      <p className="text-[var(--fg-muted)] leading-relaxed text-sm md:text-base">Our algorithm and curation team pair you with up to 3 specialized providers in the UAE who match your criteria perfectly.</p>
+                      <p className="text-[var(--fg-muted)] leading-relaxed text-sm md:text-base">Our algorithm and curation team pair you with up to 3 specialized providers in the GCC who match your criteria perfectly.</p>
                     </div>
                   </div>
                 </div>
